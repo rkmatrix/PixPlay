@@ -1,0 +1,25 @@
+<!-- Categories -->
+            <div class="categories">
+            	<ul>
+				<div style="float:left; margin-left:20px;" class="nav-container"> <!--This is the second division of right-->
+				  <h5>Categories</h5>
+				  <div class="leftmenu_head" id="secondpane">
+						
+						<?php
+						$categories = mysql_query('select category from categories');$i=1;
+						while($categories_row = mysql_fetch_array($categories)){ ?>
+						<p class="<?php if($i==1){echo "leftmenu_head firstselect";}else{echo "leftmenu_head";}?>"><?php echo $categories_row[0] ?></p>
+						<div class="leftmenu_body">
+							<?php 
+								$subCategories = mysql_query('select * from subcategories');
+								while ($subCategories_row = mysql_fetch_array($subCategories)){
+									if($subCategories_row[$i] != null){?>
+								<a href="http://localhost/a/ViewAll.php?category=<?php echo $categories_row[0]; ?>&subcategory=<?php if($categories_row[0] == "Technology"){echo "Learn_";}else{echo "Watch_";}?><?php echo $subCategories_row[$i]; ?>_online"><?php echo str_replace("_"," ",$subCategories_row[$i]); ?></a>
+								<?php }} ?>
+						</div>
+			<?php $i++;} ?>
+						
+				  </div>      <!--Code for menu ends here-->
+				</div>
+            </ul>
+			</div>

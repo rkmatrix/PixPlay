@@ -1,0 +1,100 @@
+<html>
+<head>
+	<title>Simple Paging using Jquery</title>
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="Pagination.js"></script> 
+	<style>
+	/* Below are the css apply to paging. */ 
+
+li
+{
+    list-style:none;
+}
+
+.phGallary
+{
+    padding:10px;
+    width:800px;
+}
+ 
+.phGallary div
+{
+    float:left;
+    margin:10px;
+    background-color:#e4e4e4;
+    padding:10px;
+    border:1px solid #9f9f9f;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px;
+     -webkit-border-radius: 10px;
+}
+ 
+.phGallary img
+{
+    border-radius: 5px 5px 5px 5px;
+    border:1px solid #abd305;
+    -moz-border-radius: 5px;
+     -webkit-border-radius: 5px;
+}
+ 
+.phGallary a
+{
+    text-decoration:none;
+    padding:5px;
+    border:1px solid #000;
+    margin-right:5px;
+}
+ 
+.activePageLink
+{
+    background-color:#abd305;
+}
+ 
+.phGallary a:hover
+{
+    background-color:#abd305;    
+}
+.clear {
+    clear:both
+}
+	</style>
+</head>
+<body>
+<div class="phGallary">
+   <div class="phGallary">
+    <ul id="gallary">
+        <li>
+            <div>
+                <img src="images/1.jpg" />
+            </div>
+            <div>
+                <img src="images/2.jpg" />
+            </div>
+            <div>
+                <img src="images/3.jpg" />
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="images/4.jpg" />
+            </div>
+            <div>
+                <img src="images/5.jpg" />
+            </div>
+            <div>
+                <img src="images/6.jpg" />
+            </div>
+        </li>
+    </ul>
+   
+    <center>
+        <span id="PageList" class="clear"></span>             
+    </center>
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $("#gallary").Pagination();
+        });
+</script>
+</body>
+</html>
